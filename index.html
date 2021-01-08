@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--React-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <!--React Dom-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!--Babel-->
+    <script
+      crossorigin
+      src="https://unpkg.com/babel-standalone@6/babel.min.js"
+    ></script>
+    <script type="text/babel">
+      function Cars(props) {
+        return (
+          <div className="cars">
+            <h1>{props.carsName}</h1>
+            <img src={props.imgSorce} />
+            <br />
+            <a href={props.wiki}>{props.carsName} wiki</a>
+          </div>
+        );
+      }
+
+      function Welcome(props) {
+        return (
+          <div>
+            <h4>{props.userName}</h4>
+            <span>{props.rating}/5</span>
+            <p>{props.reviewMessage}</p>
+          </div>
+        );
+      }
+
+      const element = (
+        <div className="welcome">
+          <Welcome
+            userName="bigtyme"
+            rating="3"
+            reviewMessage="a little expensive"
+          />
+          <Welcome
+            userName="twin"
+            rating="5"
+            reviewMessage="love the horsepower"
+          />
+          <Cars
+            carsName="charger ScatPack"
+            imgSorce="https://images.thecarhp.com/images/content/f25495aae18cccb12379f7ff3d5611b2.jpeg"
+            wiki="https://en.wikipedia.org/wiki/Dodge_Charger"
+          />
+          <Cars
+            carsName="challenger demon"
+            imgSorce="https://cdn.motor1.com/images/mgl/NwV82/s1/2018-dodge-challenger-srt-demon.jpg"
+            wiki="https://en.wikipedia.org/wiki/Dodge_Challenger"
+          />
+          <Cars
+            carsName="durango hellcat"
+            imgSorce="https://thumbor.forbes.com/thumbor/fit-in/960x720/filters:format(jpg)/https://www.forbes.com/wheels/wp-content/uploads/2020/07/Dodge-Durango-SRT-HELLCAT-1.png"
+            wiki="https://en.wikipedia.org/wiki/Dodge_Durango"
+          />
+          <Welcome />
+        </div>
+      );
+
+      ReactDOM.render(element, document.getElementById("root"));
+    </script>
+  </body>
+</html>

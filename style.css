@@ -1,0 +1,15 @@
+div.cars img {
+  height: 100px;
+}
+
+div.cars {
+  background-color: peachpuff;
+  border: 3px solid red;
+  width: 300px;
+  margin: 5px;
+  padding: 3px;
+}
+
+div.welcome h4 {
+  color: yellow;
+}
